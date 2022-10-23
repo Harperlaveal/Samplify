@@ -1,6 +1,6 @@
 # Credits
 
-Fullstack: Plaso Kusay  
+Fullstack, ejs: Plaso Kusay  
 
 Getting samples, hosting, api: Jayen Gulab  
 
