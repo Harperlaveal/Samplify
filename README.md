@@ -1,9 +1,12 @@
 # Credits
 
-Fullstack: Plaso Kusay 
-Hosting, Samples and APIs: Jayen Gulab 
-Login, Authentication, and Sessions: Gareth Mcintosh 
-Frontend, and Registering: Harper Doak 
+Fullstack: Plaso Kusay  
+
+Hosting, Samples and APIs: Jayen Gulab  
+
+Login, Authentication, and Sessions: Gareth Mcintosh  
+
+Frontend, and Registering: Harper Doak  
 
 # Use
 
