@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="logo.webp" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Samplify</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="src/PlaylistSearchController.js"></script>
+</head>
+
+<body>
+    <div class='container'>
+        <div class='header'>
+            <h1 class='header-text' style="text-transform:capitalize;"><%= username +'\'s samplify' + ' ' %><i class="fa fa-music"></i></h1>
+        </div>
+
+        <nav class="navbar navbar-expand-sm bg-light">
+          <div class="container-fluid">
+            <ul class="navbar-nav">
+            </ul>
+            <div class='search-play-row'>
+              <input id='search-user-i'  class='search-play-i' placeholder='Search user' type="text">
+              <button id='search-playlist' class="btn btn-outline-secondary" type="search"><i class="fa fa-search"></i></button>
+          </div>
+          </div>
+        </nav>
+    
+        <div id="Playlists" class="page">
+          <div class='play-container'>
+            <div class="pl-content">
+                <div id="Content" class="pl-text"> 
+                  <% if(title=="") { %>
+                    <div class="pl-name" id="pl-name">Untitled</div>
+                  <% } else { %>
+                    <div class="pl-name" id="pl-name"><%= title %></div>
+                  <% } %>
+                  <% if(description.trim().length == 0) { %>
+                    <p class="pl-desc" id="pl-desc">Undescribed</p>
+                  <% } else { %>
+                    <p class="pl-desc" id="pl-desc"><%= description %></p>
+                  <% } %>
+                  <a id='edit' href="/search">Back</a>
+                </div>
+                <div class='pl-samples'>
+                  <table class='table table-bordered'>
+                    <tbody id='pl-sample-table'>
+                      <% if(samples.length==0) { %>
+                        <div>This user has no samples</div>
+                      <% } %>
+                      <% for (var i = 0; i < samples.length; i++) { %>
+                        <tr>
+                          <td><%= samples[i].title %></td>
+                          <td><%= samples[i].artist %></td>
+                          <td><img src="<%= samples[i].img %>" width="75" height="75" alt=""></td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+          </div>
+        </div>
+</body>
+
+</html>

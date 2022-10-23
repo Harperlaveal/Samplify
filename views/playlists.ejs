@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="logo.webp" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Samplify</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="src/PlaylistController.js"></script>
+</head>
+
+<body>
+    <div class='container'>
+        <div class='header'>
+            <h1 class='header-text'>Samplify<i class="fa fa-music"></i></h1>
+        </div>
+
+        <nav class="navbar navbar-expand-sm bg-light">
+          <div class="container-fluid">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/search">Search</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/playlists">Playlists</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/profile">Profile</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    
+        <div id="Playlists" class="page">
+          <div class='play-container'>
+            <div class="pl-content">
+                <div class="pl-content">
+                  <div id="Content" class="pl-text"> 
+                    <form action='/playlists' method="POST" id="playlist-form">
+                      <% if(title=="") { %>
+                        <input type="text" contentEditable="true" name="title" class="pl-name" id="pl-name" placeholder="...Enter Playlist Name">
+                      <% } else { %>
+                        <input type="text" contentEditable="true" name="title" class="pl-name" id="pl-name" value="<%= title %>">
+                      <% } %>
+                      <% if(desc.trim().length == 0) { %>
+                        <div>
+                          <textarea  style="resize: none;" type="text" contentEditable="true" name="desc" class="pl-desc" id="pl-desc" placeholder="...Enter description"></textarea></textarea>
+                        </div>
+                      <% } else { %>
+                        <div>
+                          <textarea  style="resize: none;" type="text" contentEditable="true" name="desc" class="pl-desc" id="pl-desc"><%= desc %></textarea>
+                        </div>
+                      <% } %>
+                      <button id='edit' class="btn btn-outline-primary" formaction="/playlists/edit">Save</button>
+                      <button disabled id="clear-samples" class="btn btn-outline-secondary" formaction="/playlists/clear">Remove selected</button>
+                      <input readonly type="hidden" id="selected-samples" name="remove" placeholder="Samples" required>
+                    </form>
+                  </div>
+                  <div class='pl-samples'>
+                    <table class='table table-bordered'>
+                      <tbody id='pl-sample-table'>
+                        <% if(samples.length==0) { %>
+                          <div>Search some samples!</div>
+                        <% } %>
+                        <% for (var i = 0; i < samples.length; i++) { %>
+                          <tr>
+                            <td><%= samples[i].title %></td>
+                            <td><%= samples[i].artist %></td>
+                            <td><img src="<%= samples[i].img %>" width="75" height="75" alt=""></td>
+                            <td class="minus-click"><i id="minus" data-itemid="<%= samples[i].id %>" class="fa fa-minus"></i></td>
+                          </tr>
+                          <% } %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+</body>
+
+</html>
