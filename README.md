@@ -2,11 +2,11 @@
 
 Fullstack: Plaso Kusay  
 
-Hosting, Samples and APIs: Jayen Gulab  
+Getting samples, hosting, api: Jayen Gulab  
 
-Login, Authentication, and Sessions: Gareth Mcintosh  
+Login, authentication, sessions: Gareth Mcintosh  
 
-Frontend, and Registering: Harper Doak  
+HTML, CSS, registering: Harper Doak  
 
 # Use
 
