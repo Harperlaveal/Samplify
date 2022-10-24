@@ -2,7 +2,7 @@
 
 Fullstack, ejs: Plaso Kusay  
 
-Getting samples, hosting, api: Jayen Gulab  
+Getting samples, hosting, web service: Jayen Gulab  
 
 Login, authentication, sessions: Gareth Mcintosh  
 
