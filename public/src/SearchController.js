@@ -29,7 +29,7 @@ async function getSamplesFromSong(){
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': '08849a9ebamsha5f40676fc1520ep15a0a1jsn99c58874253f',
+                'X-RapidAPI-Key': '',
                 'X-RapidAPI-Host': 'genius.p.rapidapi.com'
             }
         };
