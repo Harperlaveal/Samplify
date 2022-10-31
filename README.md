@@ -1,13 +1,3 @@
-# Credits
-
-Fullstack, ejs: Plaso Kusay  
-
-Getting samples, hosting, web service: Jayen Gulab  
-
-Login, authentication, sessions: Gareth Mcintosh  
-
-HTML, CSS, registering: Harper Doak  
-
 # Use
 
 Using Web application: Run npm install in project terminal, then run application with npm start. Go to localhost:3002 and then sign up with a new
